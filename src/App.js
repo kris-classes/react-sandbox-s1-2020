@@ -2,7 +2,7 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import DoSomething, { DoSomethingAgain, DoSomethingElse} from 'DoSomething'
+import DoSomething, { DoSomethingAgain, DoSomethingElse} from './DoSomething'
 // Install material-ui: https://material-ui.com/
 // Using a named import
 import { Button, Slider } from '@material-ui/core'

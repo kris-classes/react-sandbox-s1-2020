@@ -1,14 +1,14 @@
 
 
-function DoSomething() {
+export function DoSomething() {
   console.log('Doing something')
 }
 
-function DoSomethingElse() {
+export function DoSomethingElse() {
   console.log('Doing something else')
 }
 
-function DoSomethingAgain() {
+export function DoSomethingAgain() {
   console.log('Doing something again')
 }
 
