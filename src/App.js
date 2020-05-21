@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
+
+import DoSomething, { DoSomethingAgain, DoSomethingElse} from 'DoSomething'
 // Install material-ui: https://material-ui.com/
 // Using a named import
 import { Button, Slider } from '@material-ui/core'
@@ -169,6 +171,8 @@ class MyClassBasedComponent extends React.Component {
 
 
 function App() {
+  console.log('DoSomething: ')
+  console.log(DoSomething)
   return (
     <div className="App">
       <header className="App-header">
@@ -176,9 +180,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-          <MyClassBasedComponent customProp="1234" somePropCallback={sayHello} />
-          <MyComponent name="Blah" somemath={1 + 3} />
-          <MyComponent name="Blah">These two lines are equivalent</MyComponent>
+        <button onClick={DoSomething}>Do Something button</button>
+        <button onClick={DoSomethingElse}>Do Something Else</button>
+        <button onClick={DoSomethingAgain}>Do Something Again</button>
+        <MyClassBasedComponent customProp="1234" somePropCallback={sayHello} />
+        <MyComponent name="Blah" somemath={1 + 3} />
+        <MyComponent name="Blah">These two lines are equivalent</MyComponent>
         <a
           className="App-link"
           href="https://reactjs.org"
