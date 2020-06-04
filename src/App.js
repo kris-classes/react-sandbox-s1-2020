@@ -168,6 +168,21 @@ class MyClassBasedComponent extends React.Component {
   }
 
 }
+const MyText = ({age,name,children},asdf) => {
+  console.log("now react is looking at the MyText component")
+
+  return (
+    <span>some text <br/>
+    age: {age}<br/>
+    NAme: {name}<br/>
+    Children: {children}  </span>
+  )
+}
+
+const MyDebounceButton =  () => {
+  return <button onClick={() => console.log('clicked!')} > Click me and watch me become disabled  </button>
+}
+
 
 
 function App() {
@@ -176,13 +191,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
         <img src={logo} className="App-logo" alt="logo" />
+         <MyDebounceButton />
+        <MyText name="myNameProp" age={20+50} > some stuff here :)   </MyText>
+        <h1 id="myHeading">Says Somethng </h1>
+         <h1 id="myHeading">Says Somethng Else with same ID </h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={DoSomething}>Do Something button</button>
-        <button onClick={DoSomethingElse}>Do Something Else</button>
-        <button onClick={DoSomethingAgain}>Do Something Again</button>
+        <button    className="myButtonClass" onClick={DoSomething}>Do Something button</button>
+        <button    className="myButtonClass" onClick={DoSomethingElse}>Do Something Else</button>
+        <button    className="myButtonClass"     onClick={DoSomethingAgain}>Do Something Again</button>
         <MyClassBasedComponent customProp="1234" somePropCallback={sayHello} />
         <MyComponent name="Blah" somemath={1 + 3} />
         <MyComponent name="Blah">These two lines are equivalent</MyComponent>

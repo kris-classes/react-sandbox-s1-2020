@@ -1,6 +1,6 @@
 
 
-export function DoSomething() {
+function DoSomething() {
   console.log('Doing something')
 }
 
