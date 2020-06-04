@@ -179,8 +179,29 @@ const MyText = ({age,name,children},asdf) => {
   )
 }
 
-const MyDebounceButton =  () => {
-  return <button onClick={() => console.log('clicked!')} > Click me and watch me become disabled  </button>
+class MyDebounceButton extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      counter : 0,
+      disabled: false,
+
+    }
+
+  }
+  handleClick = () => {
+    console.log('clicked!')
+    this.setState({
+      counter: this.state.counter+1,
+      disabled: !this.state.disabled,
+    })
+    setTimeout(() => this.setState({disabled:false}), 2500 )
+  }
+
+  render() {
+    return <button onClick={this.handleClick} disabled={this.state.disabled} > Click me - clicked {this.state.counter} times  </button>
+  }
 }
 
 
